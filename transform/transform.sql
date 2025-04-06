@@ -37,6 +37,7 @@ CREATE TABLE sellers (
     postal_code TEXT
 );
 
+<<<<<<< HEAD
 CREATE TABLE providers (
     supplier_id SERIAL PRIMARY KEY,
     contact TEXT,
@@ -59,6 +60,8 @@ CREATE TABLE shops (
     phone TEXT
 );
 
+=======
+>>>>>>> refs/remotes/origin/main
 CREATE TABLE sales (
     sale_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES buyers(customer_id),
@@ -66,9 +69,37 @@ CREATE TABLE sales (
     quantity INT,
     seller_id INT REFERENCES sellers(seller_id),
     supplier_id INT REFERENCES providers(supplier_id),
+<<<<<<< HEAD
     total_price INT,
     store_id INT REFERENCES shops(store_id),
     sale_date DATE
+=======
+    total_price INT
+    store_id INT REFERENCES shops(store_id),
+    sale_date DATE,
+);
+
+CREATE TABLE providers (
+    supplier_id SERIAL PRIMARY KEY,
+    contact TEXT,
+    email TEXT,
+    name TEXT,
+    country TEXT
+    address TEXT,
+    phone TEXT,
+    city TEXT,
+);
+
+CREATE TABLE shops (
+    store_id SERIAL PRIMARY KEY,
+    location TEXT,
+    city TEXT,
+    name TEXT,
+    email TEXT
+    country TEXT,
+    state TEXT,
+    phone TEXT,
+>>>>>>> refs/remotes/origin/main
 );
 
 
